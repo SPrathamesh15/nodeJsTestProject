@@ -1,0 +1,103 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    background: #212529;
+    padding: 5px;
+    padding-left: 20px;
+    border-radius: 10px;
+    align-items: center;
+    width: 200px;
+}
+
+.headline{
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+}
+.bottomline{
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.star {
+    font-size: 30px; /* Adjust the font size */
+    margin-right: 0.3rem; 
+    color: white;
+}
+
+.one { 
+	color: rgb(255, 0, 0); 
+} 
+
+.two { 
+	color: rgb(255, 106, 0); 
+} 
+
+.three { 
+	color: rgb(251, 255, 120); 
+} 
+
+.four { 
+	color: rgb(255, 255, 0); 
+} 
+
+.five { 
+	color: rgb(24, 159, 14); 
+}
+
+.header{
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 50px;
+}
+.list-group-item {
+    padding-top: 20px;
+}
+.form-group{
+    padding-bottom: 10px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white
+}
+.form-control{
+    background-color: #212529;
+    border: none;
+    color: black;
+}
+.searchbox{
+    background-color: #212529;
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 70px;
+    border: none;
+    margin-left: 380px
+}
+
+.searchbox:focus {
+    background-color: white; 
+}
+
+.labels{
+    padding-bottom: 10px;
+}
+.form{
+    background-color: #F8CADD;
+    padding: 15px;
+    color: #FE2172;
+    font-family: cursive;
+}
+
+li:nth-child(even) {
+    background-color: #F8CADD;
+    margin-top: 10px;
+}
+li:nth-child(odd) {
+    background-color: white;
+    margin-top: 10px;
+}
