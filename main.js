@@ -28,8 +28,10 @@ function remove() {
 }
 
 var reviewForm = document.getElementById('reviewform')
+var searchBox = document.getElementById('search')
 // Form submit event
 reviewForm.addEventListener('submit', addReview)
+searchBox.addEventListener('submit', getReview)
 
 function addReview(e){
     e.preventDefault();
@@ -76,18 +78,19 @@ function addReview(e){
 
 }
 
-function handlePageLoad() {
-    // Making a GET request to retrieve data from the backend server
-    axios.get("http://localhost:3000/review/get-all-reviews")
+function getReview(e) {
+    e.preventDefault();
+    // Get the company name from the search box
+    var companyName = document.getElementById('filter').value;
+    // Make a GET request with the company name as a query parameter
+    axios.get(`http://localhost:3000/review/get-reviews-by-company?companyName=${companyName}`)
         .then((response) => {
-            // Displaying the data on the screen and in the console
+            console.log(response.data.allReviews);
             showNewReviewOnScreen(response.data.allReviews);
-            console.log('handlepageload data', response.data.allReviews);
         })
-        .catch((err) => {
-            console.error('Error while fetching data:', err);
-        });
+        .catch(err => console.log(err));
 }
+
 var itemList = document.getElementById('items');
 function showNewReviewOnScreen(reviews) {
     const parentNode = document.getElementById('items');
@@ -102,26 +105,27 @@ function showNewReviewOnScreen(reviews) {
         // Creating elements with appropriate classes
         const companyNameElement = document.createElement('span');
         companyNameElement.className = 'labels';
-        companyNameElement.innerText = `Company Name': ${reviews[i].companyName}`;
+        companyNameElement.innerHTML = `<strong>Company Name:</strong> ${reviews[i].companyName} <br>`;
 
         const prosElement = document.createElement('span');
         prosElement.className = 'labels';
-        prosElement.innerText = `Pros: ${reviews[i].pros}`;
+        prosElement.innerHTML = `<strong>Pros:</strong> ${reviews[i].pros} <br>`;
 
         const consElement = document.createElement('span');
         consElement.className = 'labels';
-        consElement.innerText = `Cons: ${reviews[i].cons}`;
+        consElement.innerHTML = `<strong>Cons:</strong> ${reviews[i].cons} <br>`;
 
         const starsElement = document.createElement('span');
         starsElement.className = 'labels';
-        starsElement.innerText = `Stars: ${reviews[i].stars}`;
+        starsElement.innerHTML = `<strong>Stars: </strong>${reviews[i].stars}`;
 
         // Appending elements to the li
-        li.appendChild(firstNameElement);
-        li.appendChild(lastNameElement);
-        li.appendChild(emailIdElement);
-        li.appendChild(phoneElement);
+        li.appendChild(companyNameElement);
+        li.appendChild(prosElement);
+        li.appendChild(consElement);
+        li.appendChild(starsElement);
 
         parentNode.appendChild(li);
     }
 }
+

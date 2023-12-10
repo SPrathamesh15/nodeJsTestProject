@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <header id="main-header" style='background-color:black'>
+<body class ='body'>
+    <header id="main-header">
         <div class="container">
             <div>
                 <h1 id="header-title" class='header'><span style='color: #FE2172'>Add</span> Review</h1>
@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-4">
                     <form id = 'reviewform'>
-                        <div class="form-container">
+                        <div class="form-container" style='margin-top: 30px'>
                             <div class="form-group">
                                 <label class='labels'>Enter Company Name</label>
                                 <input type="text" class="form-control" id="companyname">
@@ -54,16 +54,22 @@
                       <p id="output" class ='bottomline'> 
                         Rating is: 0/5 
                     </p> 
-                        <button type="submit" class="btn btn-primary" style='margin-bottom: 229px'>Submit</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
-                <div class="col-6" style='margin-top: 25px'>
+                
+                <div class="col-6" style='margin-top: 50px'>
+                    <form id='search'>
                     <input type="text" class="searchbox" id="filter" placeholder='Search Reviews...'>
+                    <ul id="items" class="list-group"> </ul>
                 </div>
-                <div class="col-2" style='margin-top: 25px'>
-                    <button type="submit" class="btn btn-primary" style='margin-bottom: 229px'>Search</button>
+                
+                <div class="col-2" style='margin-top: 50px'>
+                    <button type="submit" class="btn btn-primary" style='margin-left: 0px'>Search</button>
+                    
                 </div>
-                <ul id="items" class="list-group"> </ul>
+                </form>
+                
             </div>
         </div>
     </header>

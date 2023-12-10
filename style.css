@@ -7,18 +7,25 @@
     border-radius: 10px;
     align-items: center;
     width: 200px;
+    margin-left: 100px;
 }
 
 .headline{
     font-size: 20px;
     color: white;
     font-weight: 600;
+    margin-left: 100px;
 }
 .bottomline{
     font-size: 20px;
     color: white;
     font-weight: 600;
     margin-top: 5px;
+    margin-left: 100px;
+}
+
+.btn.btn-primary{
+    margin-left: 100px
 }
 
 .star {
@@ -63,12 +70,16 @@
     font-weight: 600;
     color: white
 }
+.body{
+    background-color: black;
+}
 .form-control{
     background-color: #212529;
     border: none;
-    color: black;
+    color: white;
 }
-.searchbox{
+
+.searchbox {
     background-color: #212529;
     margin-top: 5px;
     border-radius: 5px;
@@ -76,11 +87,16 @@
     padding-left: 10px;
     padding-right: 70px;
     border: none;
-    margin-left: 380px
+    margin-left: 380px;
+    color: white; /* Text color when the input is not focused */
+}
+
+.searchbox::placeholder {
+    color: white; /* Text color for the placeholder */
 }
 
 .searchbox:focus {
-    background-color: white; 
+    color: white; /* Text color when the input is focused */
 }
 
 .labels{
@@ -92,7 +108,13 @@
     color: #FE2172;
     font-family: cursive;
 }
-
+.form-container{
+    margin-left: 100px;
+}
+.list-group{
+    margin-left: 380px;
+    margin-right: -100px
+}
 li:nth-child(even) {
     background-color: #F8CADD;
     margin-top: 10px;
